@@ -27,7 +27,7 @@ cd expoclass
 
 Once inside the project folder, install the dependencies by running:
 
-npm install | yarn install
+`npm install` OR `yarn install`
 
 This will install all the necessary packages listed in package.json.
 
@@ -45,7 +45,7 @@ Running the Application
 
 Run the following command to start the development server:
 
-yarn start | npx expo start | npm start
+`yarn start` OR `npx expo start` OR `npm start`
 
 This will open the Expo Developer Tools in your browser. From there, you can run the app on your desired platform.
 
@@ -53,30 +53,22 @@ This will open the Expo Developer Tools in your browser. From there, you can run
 
 	•	iOS: To run the app on an iOS simulator, press i in the Expo Developer Tools or run:
 
-npx expo start --ios | press i to open iOS simulator | scan QR code in expo app to run the code
+        `npx expo start --ios` OR `press i to open iOS simulator` OR `scan QR code in expo app to run the code`
 
 	•	Android: To run the app on an Android emulator, press a in the Expo Developer Tools or run:
 
-npx expo start --android | press a to open android emulator | scan QR code in expo app to run the code
+        `npx expo start --android` OR `press i to open iOS simulator` OR `scan QR code in expo app to run the code`
 
 
 	•	Web: To run the app in a web browser, press w in the Expo Developer Tools or run:
 
-npx expo start --web
+        `npx expo start --web`
 
 For more advanced options, refer to the Expo documentation.
 
 Troubleshooting
 
-Common Issues
-
-	•	Expo CLI not recognized: Make sure you have expo-cli installed or use npx expo.
-	•	Metro Bundler fails to start: Try resetting Metro by running:
-
-expo start --clear
-
-
-	•	Error: SDK Version Mismatch: Ensure that your expo package in package.json matches the required SDK version (e.g., SDK 50).
+	•	Error: SDK Version Mismatch: Ensure that your expo package in package.json matches the required SDK     version (e.g., SDK 50).
 
 Learn More
 
