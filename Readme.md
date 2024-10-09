@@ -66,15 +66,6 @@ npx expo start --web
 
 For more advanced options, refer to the Expo documentation.
 
-Project Structure
-
-/expoclass
-  ├── assets/               # Static assets like images
-  ├── components/           # Reusable UI components
-  ├── screens/              # Application screens
-  ├── App.tsx               # Main entry point of the app
-  └── package.json          # Dependencies and scripts
-
 Troubleshooting
 
 Common Issues
