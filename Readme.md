@@ -35,7 +35,7 @@ This will install all the necessary packages listed in package.json.
 
 If you don’t have Expo CLI installed globally, install it using npm:
 
-npm install -g expo-cli
+`npm install -g expo-cli`
 
 Alternatively, you can use npx without installing it globally.
 
