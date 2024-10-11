@@ -27,7 +27,7 @@ const Splash = ({ navigation }) => {
   const getLoggedInUser = async () => {
     let data = await AsyncStorage.getItem("user");
     if (data) {
-      navigation.replace("Home");
+      navigation.replace("BottomTabNavigator");
     } else {
       navigation.replace("Login");
     }

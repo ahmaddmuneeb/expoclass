@@ -17,6 +17,7 @@ import Toast from "react-native-toast-message";
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleLogin = async () => {
     if (!email || !password) {
@@ -27,15 +28,18 @@ const Login = ({ navigation }) => {
         text2: "All fields are required!",
         position: "bottom",
       });
+      // setError("All fields are required!");
       return;
     }
+
+    // setError("");
 
     try {
       let userData = { email, password };
       let finalData = JSON.stringify(userData);
       console.log(finalData);
       await AsyncStorage.setItem("user", finalData);
-      navigation.replace("Home");
+      navigation.replace("BottomTabNavigator");
     } catch (error) {}
   };
 
@@ -99,7 +103,7 @@ const Login = ({ navigation }) => {
                   paddingVertical: 16,
                   paddingHorizontal: 6,
                   marginVertical: 4,
-                  borderWidth: "#707070",
+                  borderColor: error ? "red" : "#707070",
                   borderWidth: 1,
                   borderRadius: 4,
                   fontSize: 16,
@@ -117,7 +121,7 @@ const Login = ({ navigation }) => {
                   paddingVertical: 16,
                   paddingHorizontal: 6,
                   marginVertical: 4,
-                  borderWidth: "#707070",
+                  borderColor: error ? "red" : "#707070",
                   borderWidth: 1,
                   borderRadius: 4,
                   fontSize: 16,
@@ -164,6 +168,7 @@ const Login = ({ navigation }) => {
                   </Text>
                 </View>
               </TouchableOpacity>
+              <Text style={{ textAlign: "center", color: "red" }}>{error}</Text>
             </View>
           </View>
         </View>

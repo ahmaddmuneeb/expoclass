@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Splash from "../screens/splash/Splash";
 import Login from "../screens/login/Login";
 import Home from "../screens/home/Home";
+import BottomTabNavigator from "./BottomTabNavigator";
 
 const RootStackNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -25,6 +26,13 @@ const RootStackNavigation = () => {
           name="Login"
           component={Login}
         />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="BottomTabNavigator"
+          component={BottomTabNavigator}
+        />
         {/* <Stack.Screen
           options={{
             headerShown: false,
@@ -32,7 +40,7 @@ const RootStackNavigation = () => {
           name="BottomTabNavigator"
           component={Login}
         /> */}
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Home"
           component={Home}
           // options={{
@@ -40,7 +48,7 @@ const RootStackNavigation = () => {
           //     <Button onPress={() => handleLogout()} title="Logout" color="black" />
           //   ),
           // }}
-        />
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

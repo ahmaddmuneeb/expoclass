@@ -125,11 +125,6 @@ const Home = ({ navigation }) => {
     return COLORS[randomIndex];
   };
 
-  const handleLogout = async () => {
-    await AsyncStorage.clear();
-    navigation.navigate("Splash");
-  };
-
   return (
     <View
       style={{
@@ -259,7 +254,7 @@ const Home = ({ navigation }) => {
             ))}
           </View> */}
 
-          <View
+          {/* <View
             style={{
               marginVertical: 8,
               marginHorizontal: 4,
@@ -293,7 +288,7 @@ const Home = ({ navigation }) => {
                 </Text>
               </View>
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
       </ScrollView>
     </View>
