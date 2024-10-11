@@ -1,4 +1,5 @@
 import {
+  Alert,
   Image,
   KeyboardAvoidingView,
   Platform,
@@ -10,10 +11,33 @@ import {
   View,
 } from "react-native";
 import React, { useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import Toast from "react-native-toast-message";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleLogin = async () => {
+    if (!email || !password) {
+      // Alert.alert("All fields are required");
+      Toast.show({
+        type: "error",
+        text1: "Error",
+        text2: "All fields are required!",
+        position: "bottom",
+      });
+      return;
+    }
+
+    try {
+      let userData = { email, password };
+      let finalData = JSON.stringify(userData);
+      console.log(finalData);
+      await AsyncStorage.setItem("user", finalData);
+      navigation.replace("Home");
+    } catch (error) {}
+  };
 
   return (
     <KeyboardAvoidingView
@@ -26,7 +50,6 @@ const Login = ({ navigation }) => {
         style={{
           flex: 1,
           height: "100%",
-          backgroundColor: "red",
         }}
         contentContainerStyle={{
           flexGrow: 1,
@@ -114,11 +137,11 @@ const Login = ({ navigation }) => {
               }}
             >
               <TouchableOpacity
-                onPress={() => navigation.replace("Home")}
+                onPress={() => handleLogin()}
                 style={{
                   width: "95%",
                   overflow: "hidden",
-                  backgroundColor: "#fc1",
+                  backgroundColor: "#fc1000",
                   paddingVertical: 16,
                   paddingHorizontal: 6,
                   marginVertical: 4,
@@ -134,6 +157,7 @@ const Login = ({ navigation }) => {
                     style={{
                       fontSize: 16,
                       fontWeight: "bold",
+                      color: "white",
                     }}
                   >
                     Login

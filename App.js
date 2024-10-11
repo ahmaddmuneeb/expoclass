@@ -1,7 +1,6 @@
-import {Text, View} from 'react-native';
-import React from 'react';
-import Splash from './src/screens/splash/Splash';
-import RootStackNavigation from './src/navigation/RootStackNavigation';
+import React from "react";
+import RootStackNavigation from "./src/navigation/RootStackNavigation";
+import Toast from "react-native-toast-message";
 
 const App = () => {
   return (
@@ -31,7 +30,10 @@ const App = () => {
     //   </View>
     // </View>
     // <Splash />
-    <RootStackNavigation />
+    <>
+      <RootStackNavigation />
+      <Toast />
+    </>
   );
 };
 

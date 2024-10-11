@@ -7,6 +7,7 @@ import Home from "../screens/home/Home";
 
 const RootStackNavigation = () => {
   const Stack = createNativeStackNavigator();
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Splash">
@@ -24,7 +25,22 @@ const RootStackNavigation = () => {
           name="Login"
           component={Login}
         />
-        <Stack.Screen name="Home" component={Home} />
+        {/* <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="BottomTabNavigator"
+          component={Login}
+        /> */}
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          // options={{
+          //   headerRight: () => (
+          //     <Button onPress={() => handleLogout()} title="Logout" color="black" />
+          //   ),
+          // }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,16 +1,17 @@
-import { ScrollView, StyleSheet, Text, View, FlatList } from "react-native";
+import { ScrollView, StyleSheet, Text, View, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
 import { MOVIES } from "../../utils/movies_data";
 import { COLORS } from "../../utils/colors";
 import moment from "moment";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const renderItem = ({ index, item }) => {
     return (
       <View
         style={{
           backgroundColor: getRandomColor()?.hex,
-          borderWidth: 4,
+          borderWidth: 2,
           borderColor: getRandomColor()?.borderColor,
           marginVertical: 4,
           marginHorizontal: 4,
@@ -67,7 +68,7 @@ const Home = () => {
       <View
         style={{
           backgroundColor: getRandomColor()?.hex,
-          borderWidth: 4,
+          borderWidth: 2,
           borderColor: getRandomColor()?.borderColor,
           marginVertical: 4,
           marginHorizontal: 4,
@@ -122,6 +123,11 @@ const Home = () => {
   const getRandomColor = () => {
     const randomIndex = Math.floor(Math.random() * COLORS.length);
     return COLORS[randomIndex];
+  };
+
+  const handleLogout = async () => {
+    await AsyncStorage.clear();
+    navigation.navigate("Splash");
   };
 
   return (
@@ -252,6 +258,42 @@ const Home = () => {
               </View>
             ))}
           </View> */}
+
+          <View
+            style={{
+              marginVertical: 8,
+              marginHorizontal: 4,
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                width: "95%",
+                overflow: "hidden",
+                backgroundColor: "#fc1000",
+                paddingVertical: 16,
+                paddingHorizontal: 6,
+                marginVertical: 4,
+                borderRadius: 4,
+                flexDirection: "row",
+                alignItems: "center",
+                alignSelf: "center",
+                justifyContent: "center",
+              }}
+              onPress={() => handleLogout()}
+            >
+              <View>
+                <Text
+                  style={{
+                    fontSize: 16,
+                    fontWeight: "bold",
+                    color: "white",
+                  }}
+                >
+                  Logout
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     </View>
