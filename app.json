@@ -3,7 +3,11 @@
     "name": "expoclass",
     "slug": "expoclass",
     "privacy": "public",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./src/assets/logo.png",
@@ -16,11 +20,24 @@
       "fallbackToCacheTimeout": 0,
       "url": "https://u.expo.dev/44d63a43-b328-40a5-90a7-7d4d1d8d7036"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {},
     "runtimeVersion": {
       "policy": "sdkVersion"
     },
-    "android": {}
+    "android": {},
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ],
+      "expo-video"
+    ]
   }
 }

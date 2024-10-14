@@ -5,6 +5,7 @@ import Splash from "../screens/splash/Splash";
 import Login from "../screens/login/Login";
 import Home from "../screens/home/Home";
 import BottomTabNavigator from "./BottomTabNavigator";
+import DrawerNavigator from "./DrawerNavigator";
 
 const RootStackNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -33,6 +34,13 @@ const RootStackNavigation = () => {
           name="BottomTabNavigator"
           component={BottomTabNavigator}
         />
+        {/* <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="DrawerNavigator"
+          component={DrawerNavigator}
+        /> */}
         {/* <Stack.Screen
           options={{
             headerShown: false,
