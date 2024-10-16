@@ -1,0 +1,35 @@
+.main {
+    background-color: beige;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .logo {
+    margin-block: 4px;
+  }
+  
+  .title {
+    margin-block: 4px;
+  }
+  
+  .title-text {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .login-form {
+    margin-block: 4px;
+  }
+  
+  .button {
+    margin-block: 4px;
+  }
+  
+  img {
+    width: 100px;
+    height: 100px;
+  }
+  

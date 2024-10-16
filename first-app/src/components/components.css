@@ -1,0 +1,17 @@
+.label {
+  margin-block: 8px;
+  font-weight: bold;
+}
+
+.text-input {
+  padding-block: 8px;
+  padding-inline: 4px;
+}
+
+.btn {
+    width: 150px;
+    background-color: black;
+    color: white;
+    padding-block: 8px;
+    padding-inline: 4px;
+}
